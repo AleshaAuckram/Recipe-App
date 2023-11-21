@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RecipeApp.Views.AddRecipePage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Padding="20">
+
+    <StackLayout>
+        <Label Text="Add Recipe" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20"/>
+
+        <!-- Input fields for adding a new recipe -->
+        <Entry Placeholder="Recipe Name" Text="{Binding RecipeName}" Margin="0,0,0,10"/>
+        <Entry Placeholder="Ingredients" Text="{Binding Ingredients}" Margin="0,0,0,10"/>
+        <Entry Placeholder="Instructions" Text="{Binding Instructions}" Margin="0,0,0,10"/>
+
+        <!-- Button to select or capture an image -->
+        <Button Text="Select Image" Command="{Binding SelectImageCommand}" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10"/>
+
+        <!-- Display selected image (optional) -->
+        <Image Source="{Binding RecipeImage, Converter={StaticResource ByteArrayToImageSourceConverter}}" Margin="0,0,0,10" />
+
+        <!-- Button to add a new recipe -->
+        <Button Text="Add Recipe" Command="{Binding AddRecipeCommand}" HorizontalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
